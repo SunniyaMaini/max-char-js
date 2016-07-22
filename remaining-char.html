@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Maximum Character</title>
+
+</head>
+<body>
+<h3>Set a max limit to textarea upto 200</h3>
+<textarea id="textBox" rows="10" cols="30"></textarea>
+<p id="result"></p>
+
+<script>
+var totalChar = 200;
+var result = document.getElementById("result");
+var textArea = document.getElementById("textBox");
+result.innerHTML = 200 + " remaining character";
+textArea.addEventListener("keyup", myFunction);
+
+function myFunction() {	
+	textArea.maxLength = totalChar;
+	var inputChar = textArea.value.length;
+	result.innerHTML = (totalChar - inputChar) + " remaining character";
+}
+
+/*document.getElementById("textBox").addEventListener("keyup", myFunction);
+function myFunction() {
+	document.getElementById("textBox").value ="";	
+	document.getElementById("result").innerHTML = 100 - document.getElementById("textBox").value.length;
+}*/
+</script>
+
+</body>
+</html>
